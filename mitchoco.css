@@ -9,7 +9,7 @@
 
         .main_header {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px;
             display: flex;
             flex-direction: column;
         }
@@ -34,7 +34,7 @@
         /*네비게이션 카테고리 바*/
         .categorie {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px;
             height: 50px;
             background-color: rgb(255, 208, 255);
             display: flex;
