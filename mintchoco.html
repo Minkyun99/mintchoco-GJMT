@@ -6,57 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./mitchoco.css">
-    <!-- <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Secular+One&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=La+Belle+Aurore&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Secular+One&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=La+Belle+Aurore&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Rubik+Gemstones&family=Secular+One&display=swap');
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
 
-        body, html {
-            font-family: 'Secular One', sans-serif;
-        }
-        .home {
-            width: 100%;
-            max-width: 1200px;
-            height: 300px;
-            background-color: darkgreen;
-        }
+            /*헤더 및 네브, 콘텐츠 생성*/
+            const main_header = document.createElement('div')   //최상단 헤더를 감싸는 디브
+            const home = document.createElement('header')   //최상단 타이틀 헤더
+            const main_img = document.createElement('div')      //최상단 이미지 헤더
+            const categorie = document.createElement('nav')
+            const main = document.createElement('div')
+            const profile = document.createElement('div')
+            const container = document.createElement('div')
+            const container_img = document.createElement('div')
+            const container_text = document.createElement('div')
+            
+            home.innerHTML = 'MINT CHOCO GJMT'
+            main_img.innerHTML = '<img src="./아냐 메인 홈페이지 크기조정.png">'
+            
+            
+            document.body.append(main_header)
+            main_header.appendChild(home)
+            main_header.appendChild(main_img)
+            document.body.append(categorie)
 
-        .categorie {
-            width: 100%;
-            max-width: 1200px;
-            height: 50px;
-            background-color: blue;
-        }
-        .profile {
-            background-color: #aaa;
-            width: 200px;
-            height: 500px;
-        }
 
-        button {
-            background-color: grey;
-            width: 80px;
-        }
+            /*버튼 생성 반복문*/
+            for(i=1; i<=3; i++){
+                const button = document.createElement('button')
+                Object.assign(button,{
+                    id:`button${i}`
+                })
+                categorie.appendChild(button)
+            }
+    
+            button1.innerHTML = '홈'
+            button2.innerHTML = '게시글'
+            button3.innerHTML = '글작성'
+            
+            document.body.append(main)
+            main.appendChild(profile)
+            main.appendChild(container)
+            container.appendChild(container_img)
+            container.appendChild(container_text)
 
-        .img {
-            background-color: red;
-        }
 
-        .title {
-            font-family: 'Secular One', sans-serif;
-        }
+            /*id와 class 네임 부여*/
+            Object.assign(main_header,{
+                id:'main_header',
+                className:'main_header'
+            })
 
-        .main {
-            display: flex;
-        }
+            Object.assign(home,{
+                id:'home',
+                className:'home'
+            })
 
-        .container {
-            margin-left: 30px;
-        }
-    </style> -->
+            Object.assign(main_img,{
+                id:'main_img',
+                className:'main_img'
+            })
+
+            Object.assign(categorie,{
+                id:'categorie',
+                className:'categorie'
+            })
+           
+            Object.assign(main,{
+                id:'main',
+                className:'main'
+            })
+           
+            Object.assign(profile,{
+                id:'profile',
+                className:'profile'
+            })
+           
+            Object.assign(container,{
+                id:'container',
+                className:'container'
+            })
+
+        })
+    </script>
 </head>
 <body>
-    <div class="main_header">
+    <!-- <div class="main_header">
         <header class="home" >MINT CHOCO GJMT</header>
         <img src="./아냐 메인 홈페이지 크기조정.png" alt="" class="main_img">
     </div>
@@ -73,7 +107,7 @@
                 <img src="./mainstoryimg.png" alt="">
                 <div class="content_text">정말인지 귀찮아 죽겠네</div>
             </div>
-        </div>
+        </div> -->
 
 
 
