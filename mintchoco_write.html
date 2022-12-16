@@ -7,10 +7,122 @@
     <title>Document</title>
     <link rel="stylesheet" href="./mitchoco.css">
     <link rel="stylesheet" href="./detail_content.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+
+        /*헤더 및 네브, 콘텐츠 생성*/
+        const main_header = document.createElement('div')   //최상단 헤더를 감싸는 디브
+        const home = document.createElement('header')   //최상단 타이틀 헤더
+        const main_img = document.createElement('div')      //최상단 이미지 헤더
+        const categorie = document.createElement('nav') //버튼 3개를 감싸는 카테고리 바
+        const main = document.createElement('div')  //profile과 container를 감싸는 메인 div
+        const profile = document.createElement('div')   
+        const container = document.createElement('div') 
+        const container_img = document.createElement('div') //container 내부 변경되는 사항
+        const container_text = document.createElement('div')
+
+        home.innerHTML = 'MINT CHOCO GJMT'
+        main_img.innerHTML = '<img src="./아냐 메인 홈페이지 크기조정.png">'
+
+
+        document.body.append(main_header)
+        main_header.appendChild(home)
+        main_header.appendChild(main_img)
+        document.body.append(categorie)
+
+
+        /*버튼 생성 반복문*/
+        for(i=1; i<=3; i++){
+            const button = document.createElement('button')
+            Object.assign(button,{
+                id:`button${i}`
+            })
+            categorie.appendChild(button)
+        }
+
+        button1.innerHTML = '홈'
+        button2.innerHTML = '게시글'
+        button3.innerHTML = '글작성'
+
+        document.body.append(main)
+        main.appendChild(profile)
+        main.appendChild(container)
+        container.appendChild(container_img)
+        container.appendChild(container_text)
+
+
+        /*id와 class 네임 부여*/
+        Object.assign(main_header,{
+            id:'main_header',
+            className:'main_header'
+        })
+
+        Object.assign(home,{
+            id:'home',
+            className:'home'
+        })
+
+        Object.assign(main_img,{
+            id:'main_img',
+            className:'main_img'
+        })
+
+        Object.assign(categorie,{
+            id:'categorie',
+            className:'categorie'
+        })
+
+        Object.assign(main,{
+            id:'main',
+            className:'main'
+        })
+
+        Object.assign(profile,{
+            id:'profile',
+            className:'profile'
+        })
+
+        Object.assign(container,{
+            id:'container',
+            className:'container'
+        })
+
+        /*메인 콘텐츠 테이블 생성*/
+        const td_content = ['글번호', '제목', '작성자','조회수', '날짜', '내용' ]
+        const table = document.createElement('table')
+        container.appendChild(table)
+        /*테이블 반복문*/
+        for(i=0; i<=6; i++){
+            const tr = document.createElement('tr')
+            const td = document.createElement('td')
+            const td1 = document.createElement('td')
+            Object.assign(td,{
+                id: `td${i+1}`
+            })
+
+            Object.assign(td1,{
+                id : `td1${i+1}`
+            })
+
+            td.innerHTML = td_content[i]
+            td1.innerHTML = td_content[i]
+
+            table.appendChild(tr)
+            tr.appendChild(td)
+            tr.appendChild(td1)
+        }
+
+
+
+        })
+    </script>
+
+    
     
 </head>
 <body>
-    <div class="main_header">
+    <!-- <div class="main_header">
         <header class="home" >MINT CHOCO GJMT</header>
         <img src="./아냐 메인 홈페이지 크기조정.png" alt="" class="main_img">
     </div>
@@ -85,7 +197,7 @@
 
                </div>
             </div>
-        </div>
+        </div> -->
 
 
 
