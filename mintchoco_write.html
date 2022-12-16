@@ -91,7 +91,22 @@
         /*메인 콘텐츠 테이블 생성*/
         const td_content = ['글번호', '제목', '작성자','조회수', '날짜', '내용' ]
         const table = document.createElement('table')
+        const colgroup = document.createElement('colgroup')
         container.appendChild(table)
+        table.appendChild(colgroup)
+        for(i=0; i<=1; i++){
+            const col = document.createElement('col')
+
+            Object(col,{
+                id: `col${i}`
+            })
+
+            col.width = '200px'
+            col.height = '50px'
+            colgroup.appendChild(col)
+            
+        }
+
         /*테이블 반복문*/
         for(i=0; i<=6; i++){
             const tr = document.createElement('tr')
