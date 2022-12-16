@@ -41,9 +41,13 @@
             categorie.appendChild(button)
         }
 
+        /*카테고리 버튼 연동*/
         button1.innerHTML = '홈'
+        button1.setAttribute('onclick', "location.href='mintchoco.html'")
         button2.innerHTML = '게시글'
+        button2.setAttribute('onclick', "location.href='borad.html'")
         button3.innerHTML = '글작성'
+        button3.setAttribute('onclick', "location.href='write.html'")
         
         document.body.append(main)
         main.appendChild(profile)
@@ -103,7 +107,7 @@
             </div>
             <div id="text_area">       <!-- 내용 -->
                 <span class="write_b">내용</span>
-                    <textarea name=""  cols="30" rows="10" id="write_area"></textarea>
+                <textarea name=""  id="write_area"></textarea>
             </div>
             <div class="write_writer">   <!-- 작성자 -->
                 <span>작성자</span>

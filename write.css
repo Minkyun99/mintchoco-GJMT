@@ -2,8 +2,8 @@ h1 {
     font-size: 40px;
 }
 
-.container {
-    margin-left: 30px;
+#container {
+    margin-left: 100px;
 }
 
 #text_area {
@@ -25,20 +25,18 @@ h1 {
 }
 
 #write_b{
-    position: relative;
-    /* left: 35px; */
     display: flex;
-    margin: 0;
     font-size: 15px;
     width: 250px;
     height: 40px;
-    right: 30px;
+    /* margin: 0 0 0 35px; */
 }
 
 #write_area {
     font-size: 15px;
-    width: 300px;
-    height: 250px;
+    width: 250px;
+    height: 185px;
+    margin-left: 35px;
 }
 
 #write_c{
@@ -68,5 +66,15 @@ div {
 }
 
 button {
-    cursor: pointer;
-}
+        border: none;
+        background-color: rgb(255, 208, 255);
+        width: 100px;
+        height: 30px;
+        margin-left: 30px;
+        font-size: 15px;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Jua', sans-serif;
+        cursor: pointer;
+        margin:  10px;
+    }
