@@ -9,7 +9,7 @@
 
         .main_header {
             width: 100%;
-            max-width: 1000px;
+            min-width: 560px;
             display: flex;
             flex-direction: column;
         }
@@ -17,7 +17,7 @@
         /*최상단 메인 이미지*/
         .main_img {
             width: 100%;
-            max-width: 1200px;
+            min-width: 560x;
         }
         
         /*최상단 이미지 혹은 문구 구성란*/
@@ -63,7 +63,7 @@
         }
 
         button:hover {
-            transform: translateY(-3px) scale(1.2);
+            transform: translateY(-3px) scale(1.1);
             transition: 0.2s linear;
             font-size: 20px;
             color: white;

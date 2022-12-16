@@ -1,0 +1,68 @@
+        h1 {
+            font-size: 40px;
+        }
+
+
+        button {
+            border: none;
+            background-color: rgb(255, 208, 255);
+            width: 100px;
+            height: 30px;
+            margin-left: 30px;
+            font-size: 15px;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Jua', sans-serif;
+            cursor: pointer;
+            margin:  10px;
+        }
+
+        .img {
+            background-color: red;
+        }
+
+        .title {
+            font-family: 'Secular One', sans-serif;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        #container {
+            width: 720px;
+            min-width: 560px;
+            border: 2px gray solid;
+            border-radius: 5%;
+            padding: 20px;
+            /* width: 80%; */
+        }
+
+        #input_box {
+            width: 250px;
+            height: 25px;
+        }
+
+        h1{
+
+            border-bottom: 1px gray solid;
+            padding-bottom: 10px;
+        }
+        nav table{
+            width: 100%;
+            padding: 0;
+            text-align: center;
+            border-bottom: 2px rgb(0, 0, 0) solid;
+        }
+        nav th{
+            background-color: grey;
+            border: 1px white solid;
+            width: 200px;
+        }
+        sub{
+            display: flex;
+            float: right;
+        }
+        sub div{
+            margin: 10px;
+        }

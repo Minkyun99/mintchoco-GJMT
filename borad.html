@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./mitchoco.css">
+    <link rel="stylesheet" href="board.css">
+        <style>
+          
+        
+
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+
+            /*헤더 및 네브, 콘텐츠 생성*/
+            const main_header = document.createElement('div')   //최상단 헤더를 감싸는 디브
+            const home = document.createElement('header')   //최상단 타이틀 헤더
+            const main_img = document.createElement('div')      //최상단 이미지 헤더
+            const categorie = document.createElement('nav')
+            const main = document.createElement('div')
+            const profile = document.createElement('div')
+            const container = document.getElementById('container')
+            const container_img = document.createElement('div')
+            const container_text = document.createElement('div')
+            
+            home.innerHTML = 'MINT CHOCO GJMT'
+            main_img.innerHTML = '<img src="./아냐 메인 홈페이지 크기조정.png">'
+            
+            
+            document.body.append(main_header)
+            main_header.appendChild(home)
+            main_header.appendChild(main_img)
+            document.body.append(categorie)
+
+
+            /*버튼 생성 반복문*/
+            for(i=1; i<=3; i++){
+                const button = document.createElement('button')
+                Object.assign(button,{
+                    id:`button${i}`
+                })
+                categorie.appendChild(button)
+            }
+    
+            button1.innerHTML = '홈'
+            button2.innerHTML = '게시글'
+            button3.innerHTML = '글작성'
+            
+            document.body.append(main)
+            main.appendChild(profile)
+            main.appendChild(container)
+            container.appendChild(container_img)
+            container.appendChild(container_text)
+
+
+            /*id와 class 네임 부여*/
+            Object.assign(main_header,{
+                id:'main_header',
+                className:'main_header'
+            })
+
+            Object.assign(home,{
+                id:'home',
+                className:'home'
+            })
+
+            Object.assign(main_img,{
+                id:'main_img',
+                className:'main_img'
+            })
+
+            Object.assign(categorie,{
+                id:'categorie',
+                className:'categorie'
+            })
+           
+            Object.assign(main,{
+                id:'main',
+                className:'main'
+            })
+           
+            Object.assign(profile,{
+                id:'profile',
+                className:'profile'
+            })
+           
+            Object.assign(container,{
+                id:'container',
+                className:'container'
+            })
+
+        })
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+        const num = document.getElementById('na_num')
+        const til = document.getElementById('na_til')
+        const writer = document.getElementById('na_writer')
+        const view = document.getElementById('na_view')
+        const date = document.getElementById('na_data')
+        const nav = document.getElementById('table1')
+        const table = document.createElement('table')
+        const th = document.createElement('th')
+        const tr = document.createElement('tr')
+        const td = document.createElement('td')
+        const go_b=document.getElementById('gochim')
+       
+
+        let b=0
+        
+        const bea4 = JSON.parse(localStorage.getItem('bea3'));
+
+        if(bea4){
+            bea4.splice(3,0,b)
+        }
+            console.log(bea4);
+            
+        
+        
+            
+             
+        // 반복문을 이용해 th생성
+        console.log(bea4)
+        nav.append(table)
+        let thtil=['글번호','제목','작성자','조회수','작성일자']
+        for(j=1;j<=1;j++){
+            const tr = document.createElement('tr')
+            table.appendChild(tr)
+        for(i=0;i<5;i++){
+            const th = document.createElement('th')
+            Object.assign(th,{
+                id:`th${i}`
+            })
+            th.textContent=`${thtil[i]}`
+            tr.append(th)
+        }
+    }
+    
+    
+    //    반복문을이용해 td생성 
+    const bea5=JSON.stringify(bea4)
+    localStorage.setItem('bea6',bea5)
+    const bea7 = JSON.parse(localStorage.getItem('bea6'))
+    console.log(bea7)
+    for(i=1;i<=1;i++){
+        const tr = document.createElement('tr')
+        table.appendChild(tr)
+        for(j=0;j<=4;j++){
+            const td = document.createElement('td')
+            Object.assign(th,{
+                id:`td${i}`
+            })
+            
+            tr.appendChild(td)
+            td.innerHTML=`${bea7[j]}`
+        }
+    }
+       
+            
+       
+        
+        
+        })
+        
+            
+            
+    
+    </script>
+</head>
+<body>
+        <div id="container">
+
+            <h1>게시판</h1>
+            <input type="text" id='input_box' placeholder ="검색하세요">
+            <button id="search_b">검색</button>
+            <button id="gochim">새로고침</button>
+            <!-- nav는 게시글 목록 -->
+            <nav id="table1">
+            </nav>
+            <!-- 이전 다음 버튼 -->
+            <sub>
+                <div>이전</div>
+                <div>다음</div>
+            </sub>
+            <!-- 글쓰기버튼 -->
+            <button onClick="location.href='asd.html'">글쓰기</button>
+        <!-- <!-- </div> -->
+    </div> -->
+
+
+
+</body>
+</html>
