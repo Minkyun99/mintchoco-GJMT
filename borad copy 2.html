@@ -13,6 +13,8 @@
 
         body, html {
             font-family: 'Secular One', sans-serif;
+            width: 1000px;
+            height: 500px;
         }
         .home {
             width: 100%;
@@ -80,8 +82,47 @@
         }
         
 
+
+        #popup_wrap{
+            display: none;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin: -250px 0 0 -250px;
+            background:#eee;
+            z-index: 2;
+            }
+        #popup_backgorund{
+            display: none;
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color:rgba(0, 0,0, 0.5);
+            top:0;
+            left: 0;
+            z-index: 1;
+        }
+        #popup_close{
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: -30px;
+        right: 0;
+     }
+     #popup_close> a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background:url(https://img.icons8.com/metro/26/000000/close-window.png);
+        text-indent: -9999px;
+     }
+
     </style>
     <script>
+        
         document.addEventListener("DOMContentLoaded",()=>{
         const num = document.getElementById('na_num')
         const til = document.getElementById('na_til')
@@ -93,7 +134,34 @@
         const th = document.createElement('th')
         const go_b=document.getElementById('gochim')
         const write_submit = document.getElementById('glejakb')
-       
+// 여기서부터 팝업창 관련된 js
+        const popup_background =document.createElement('div')
+        popup_background.setAttribute('id','popup_background')
+        const popup_wrap=document.createElement('div')
+        popup_wrap.setAttribute('id','popup_wrap')
+        const popup_close=document.createElement('div')
+        popup_close.setAttribute('id','popup_close')
+        const popup_a=document.createElement('a')
+        const popup_neayoung=document.createElement('div')
+        popup_neayoung.setAttribute('id','popup_neayoung')
+
+        document.body.append(popup_wrap)
+        popup_wrap.append(popup_close,popup_neayoung)
+        popup_close.append(popup_a)
+
+        popup_close.addEventListener('click', offClick);
+
+
+            
+        function onClick() {
+            popup_wrap.style.display ='block';
+            popup_background.style.display ='block';
+        }   
+        function offClick() {
+            popup_wrap.style.display ='none';
+            popup_background.style.display ='none';
+        }
+    //    여기까지 팝업창
 
         let b=0
         
@@ -122,39 +190,64 @@
             tr.append(th)
         }
     }
-    
-    
-   
-
-    
-    
-                
-                const bea5=JSON.stringify(bea4)
-                localStorage.setItem('bea6',bea5)
+              
+     const bea5=JSON.stringify(bea4)
+     localStorage.setItem('bea6',bea5)
+          
     
 
-    for(j=0;j<+1;j++){
+     const td_content = ['글번호', '제목', '작성자','조회수', '날짜', '내용' ]
+     const td_value = [bea4.indexOf[i], bea4.indexOf[i].value]
+        const table1 = document.createElement('table')
+        popup_neayoung.appendChild(table1)
+        /*테이블 반복문*/
+        for(i=0; i<=6; i++){
+            const tr = document.createElement('tr')
+            const td = document.createElement('td')
+            const td1 = document.createElement('td')
+            Object.assign(td,{
+                id: `td${i+1}`
+            })
+
+            Object.assign(td1,{
+                id : `td1${i+1}`
+            })
+
+            td.innerHTML = td_content[i]
+            td1.innerHTML = td_value[i]
+
+            table1.appendChild(tr)
+            tr.appendChild(td)
+            tr.appendChild(td1)
+        }
+
+    for(j=0;j<=1;j++){
     for(i=0;i<=bea4.length;i++){
         const tr = document.createElement('tr')
         table.appendChild(tr)
-        
             const td1 = document.createElement('td')
             const td2 = document.createElement('td')
             const td3 = document.createElement('td')
             const td4 = document.createElement('td')
             const td5 = document.createElement('td')
-
             tr.append(td1,td2,td3,td4,td5)
-            
-            
             td1.innerHTML=bea4[i].su
             td2.innerHTML=bea4[i].value
             td3.innerHTML=bea4[i].value1
             td4.innerHTML=bea4[i].view
-            td5.innerHTML=bea4[i].dateStr
+            td5.innerHTML=bea4[i].dateStr  
+
+            tr.addEventListener('click',()=>{
+                onClick()
+                
+            })
             
+            
+
         }
     }
+    
+    
     
                
     
