@@ -126,7 +126,8 @@
         let writer=document.getElementById('write_c')
         let gleb=document.getElementById('glejakb')
 
-        let su=0
+        
+        let view1=0
         const date = new Date();
 
         const year = date.getFullYear();
@@ -134,38 +135,55 @@
         const day = ('0' + date.getDate()).slice(-2);
         const dateStr = year + '-' + month + '-' + day;
 
+        const bea=[]
+        const bea7 = JSON.parse(localStorage.getItem('bea6'));
+        console.log(bea7)
+        if(bea7){
+        bea.push(...bea7)
+        }
+        console.log(bea)
+        
+        
+        
         
 
 
-        gleb.addEventListener('click',()=>{
-                const bea=[]
-            su++
-            let count= su
-            // console.log(su)
-            localStorage.setItem('su_v',su)
-            const value= title.value
-            // console.log(title.value)
-            localStorage.setItem('title_v',value)
-            const value1=writer.value
-            // console.log(writer.value)
-            localStorage.setItem('writer_v',value1)
-            var value2=neayong.value
-            localStorage.setItem('neayong_v',value2)
-            bea.push(count)
-            bea.push(value)
-            bea.push(value1)
-            bea.push(dateStr)
-            // bea.push(value2)
-            const bea1=JSON.stringify(bea)
-            localStorage.setItem('bea3',bea1)
-            
-            window.location='borad.html'
-            
-            console.log(bea)
-        })  
 
-    })
-</script>
+            let count = 1
+        gleb.addEventListener('click',()=>{
+            const obj = {}
+            count = bea.length+1
+            
+            const value= title.value
+            
+            const value1=writer.value
+            
+            var value2=neayong.value
+            
+            let view=view1
+            
+            Object.assign(obj,{
+                su : count,
+                value : value,
+                value1: value1,
+                view:view,
+                dateStr: dateStr
+                
+                })
+                
+                bea.push(obj)
+                console.log(bea)
+                const bea1=JSON.stringify(bea)
+                localStorage.setItem('bea3',bea1)
+
+                // location.href='borad.html'
+                
+                
+            })  
+            
+            
+        })
+    </script>
 
 </body>
 </html>

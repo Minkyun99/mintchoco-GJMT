@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="borad.html">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Secular+One&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=La+Belle+Aurore&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Secular+One&display=swap');
@@ -93,23 +94,22 @@
         const tr = document.createElement('tr')
         const td = document.createElement('td')
         const go_b=document.getElementById('gochim')
+        const write_submit = document.getElementById('glejakb')
        
 
         let b=0
         
         const bea4 = JSON.parse(localStorage.getItem('bea3'));
-
-        if(bea4){
-            bea4.splice(3,0,b)
-        }
-            console.log(bea4);
+        
+        console.log(bea4)
+        
             
         
         
             
              
         // 반복문을 이용해 th생성
-        console.log(bea4)
+        
         nav.append(table)
         let thtil=['글번호','제목','작성자','조회수','작성일자']
         for(j=1;j<=1;j++){
@@ -126,30 +126,48 @@
     }
     
     
-    //    반복문을이용해 td생성 
-    const bea5=JSON.stringify(bea4)
-    localStorage.setItem('bea6',bea5)
-    const bea7 = JSON.parse(localStorage.getItem('bea6'))
-    console.log(bea7)
-    for(i=1;i<=1;i++){
+   
+
+    
+    
+                const bea5=JSON.stringify(bea4)
+                localStorage.setItem('bea6',bea5)
+                
+    
+
+    for(j=0;j<+1;j++){
+    for(i=0;i<=bea4.length;i++){
         const tr = document.createElement('tr')
         table.appendChild(tr)
-        for(j=0;j<=4;j++){
-            const td = document.createElement('td')
-            Object.assign(th,{
-                id:`td${i}`
-            })
+        
+            const td1 = document.createElement('td')
+            const td2 = document.createElement('td')
+            const td3 = document.createElement('td')
+            const td4 = document.createElement('td')
+            const td5 = document.createElement('td')
+
+            tr.append(td1,td2,td3,td4,td5)
             
-            tr.appendChild(td)
-            td.innerHTML=`${bea7[j]}`
+            
+            td1.innerHTML=bea4[i].su
+            td2.innerHTML=bea4[i].value
+            td3.innerHTML=bea4[i].value1
+            td4.innerHTML=bea4[i].view
+            td5.innerHTML=bea4[i].dateStr
+            
         }
     }
-       
-            
+               
+    
+
+    
+    })
        
         
+       
+    
         
-        })
+        
         
             
             
