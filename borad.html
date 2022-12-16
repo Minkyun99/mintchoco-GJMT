@@ -96,12 +96,16 @@
        
 
         let b=0
+        
         const bea4 = JSON.parse(localStorage.getItem('bea3'));
+
         if(bea4){
             bea4.splice(3,0,b)
         }
             console.log(bea4);
             
+        
+        
             
              
         // 반복문을 이용해 th생성
@@ -120,29 +124,30 @@
             tr.append(th)
         }
     }
-
-        //    반복문을이용해 td생성 
-            for(i=1;i<=1;i++){
-                const tr = document.createElement('tr')
-                table.appendChild(tr)
-                for(j=0;j<=4;j++){
-                    const td = document.createElement('td')
-                    Object.assign(th,{
-                        id:`td${i}`
-                })
-
-                    tr.appendChild(td)
-                    td.innerHTML=`${bea4[j]}`
-                }
-            }
+    
+    
+    //    반복문을이용해 td생성 
+    const bea5=JSON.stringify(bea4)
+    localStorage.setItem('bea6',bea5)
+    const bea7 = JSON.parse(localStorage.getItem('bea6'))
+    console.log(bea7)
+    for(i=1;i<=1;i++){
+        const tr = document.createElement('tr')
+        table.appendChild(tr)
+        for(j=0;j<=4;j++){
+            const td = document.createElement('td')
+            Object.assign(th,{
+                id:`td${i}`
+            })
+            
+            tr.appendChild(td)
+            td.innerHTML=`${bea7[j]}`
+        }
+    }
        
             
        
-        // const title = localStorage.getItem('title_v')
-        // console.log(title)
-        // const writ_v = localStorage.getItem('writer_v')
-        // console.log(title)
-        // writer.innerHTML=`${writ_v}`
+        
         
         })
         
