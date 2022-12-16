@@ -57,17 +57,21 @@ button {
     margin-left: 34px;
 }
 #write_c{
-    margin-left: 10px;
+    margin-left: 14px;
 }
 .write_writer{
     margin-top: 10px;
 }
 .write_img{
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .write_file{
     margin-left: 14px;
 }
 #wr_title{
     margin-bottom: 20px;
+}
+#glejakb{
+    margin-top: 25px;
+    /* margin-left: 250px; */
 }
