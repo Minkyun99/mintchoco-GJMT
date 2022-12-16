@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="borad.html">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Secular+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=La+Belle+Aurore&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Secular+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=La+Belle+Aurore&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Rubik+Gemstones&family=Secular+One&display=swap');
+
+        body, html {
+            font-family: 'Secular One', sans-serif;
+        }
+        .home {
+            width: 100%;
+            max-width: 1200px;
+            height: 300px;
+            background-color: darkgreen;
+        }
+
+        .categorie {
+            width: 100%;
+            max-width: 1200px;
+            height: 50px;
+            background-color: blue;
+        }
+        .profile {
+            background-color: #aaa;
+            width: 200px;
+            height: 500px;
+        }
+
+        button {
+            background-color: grey;
+            width: 80px;
+        }
+
+        .img {
+            background-color: red;
+        }
+
+        .title {
+            font-family: 'Secular One', sans-serif;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        .container {
+            border: 2px gray solid;
+            border-radius: 5%;
+            width: 80%;
+        
+        }
+        h1{
+            border-bottom: 1px gray solid;
+            padding-bottom: 10px;
+        }
+        nav table{
+
+            padding: 0;
+            text-align: center;
+            border-bottom: 1px gray solid;
+        }
+        nav th{
+            background-color: grey;
+            border: 1px white solid;
+            width: 200px;
+        }
+        sub{
+            display: flex;
+            float: right;
+        }
+        sub div{
+            margin: 10px;
+        }
+        
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+        const num = document.getElementById('na_num')
+        const til = document.getElementById('na_til')
+        const writer = document.getElementById('na_writer')
+        const view = document.getElementById('na_view')
+        const date = document.getElementById('na_data')
+        const nav = document.getElementById('table1')
+        const table = document.createElement('table')
+        const th = document.createElement('th')
+        const go_b=document.getElementById('gochim')
+        const write_submit = document.getElementById('glejakb')
+       
+
+        let b=0
+        
+        const bea4 = JSON.parse(localStorage.getItem('bea3'));
+        
+        console.log(bea4)
+        
+            
+        
+        
+            
+             
+        // 반복문을 이용해 th생성
+        
+        nav.append(table)
+        let thtil=['글번호','제목','작성자','조회수','작성일자']
+        for(j=1;j<=1;j++){
+            const tr = document.createElement('tr')
+            table.appendChild(tr)
+        for(i=0;i<5;i++){
+            const th = document.createElement('th')
+            Object.assign(th,{
+                id:`th${i}`
+            })
+            th.textContent=`${thtil[i]}`
+            tr.append(th)
+        }
+    }
+    
+    
+   
+
+    
+    
+                const bea5=JSON.stringify(bea4)
+                localStorage.setItem('bea6',bea5)
+                
+    
+
+    for(j=0;j<+1;j++){
+    for(i=0;i<=bea4.length;i++){
+        const tr = document.createElement('tr')
+        table.appendChild(tr)
+        
+            const td1 = document.createElement('td')
+            const td2 = document.createElement('td')
+            const td3 = document.createElement('td')
+            const td4 = document.createElement('td')
+            const td5 = document.createElement('td')
+            const td_name = document.createElement('a') // a태그 생성
+            
+            tr.append(td1,td2,td3,td4,td5)
+            
+            
+            td1.innerHTML=bea4[i].su
+            // td2.innerHTML=bea4[i].value    
+            td3.innerHTML=bea4[i].value1
+            // td4.innerHTML=bea4[i].view
+            td5.innerHTML=bea4[i].dateStr
+            
+            td2.setAttribute('id','table_title'); // 제목 id 값
+            td_name.setAttribute('href','https://naver.com');   // 누르면 이동하는 주소
+            td_name.setAttribute('target','a_blank');   // 새창으로 열림
+            td_name.setAttribute('id','title_name');
+            td2.appendChild(td_name);   // td2 안에 a태그 들어감
+            td_name.textContent =bea4[i].value // 제목 쓰면 a태그안에 들어감
+            
+            let view = 0
+            // const tb_title = document.getElementById('title_name')
+            td_name.addEventListener('click',()=>{  // 제목 클릭
+                view++  
+
+                td4.innerHTML = view    // 제목누르면 조회수가 올라감
+                
+            })
+        }
+    }
+    
+               
+    
+
+    
+    })
+       
+        
+       
+    
+        
+        
+        
+            
+            
+    
+    </script>
+</head>
+<body>
+
+    /*홈화면*/
+
+    <div class="home">홈 메인</div>
+    <div class="categorie">카테고리
+        <button class="bar_home">홈</button>
+        <button class="bar_board" onClick="location.href='borad.html'">게시판</button>
+        <button class="bar_write" onClick="location.href='asd.html'">글작성</button>
+    </div>
+    <div class="main">
+        <div class="profile">프로필</div>
+        <div class="container">
+
+            <h1>게시판</h1>
+            <input type="text" placeholder ="검색하세요" size="40px">
+            <button id="search_b">검색</button>
+            <button id="gochim">새로고침</button>
+            <!-- nav는 게시글 목록 -->
+            <nav id="table1">
+            </nav>
+            <!-- 이전 다음 버튼 -->
+            <sub>
+                <div>이전</div>
+                <div>다음</div>
+            </sub>
+            <!-- 글쓰기버튼 -->
+            <button onClick="location.href='asd.html'">글쓰기</button>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
