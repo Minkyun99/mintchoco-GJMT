@@ -1,0 +1,106 @@
+        @import url(./reset.css);
+        @import url(./font.css);
+        
+
+        /*전체 CSS 구성*/
+        body, html {
+            font-family: 'Jua', sans-serif;
+        }
+
+        .main_header {
+            width: 100%;
+            min-width: 560px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*최상단 메인 이미지*/
+        .main_img {
+            width: 100%;
+            min-width: 560x;
+        }
+        
+        /*최상단 이미지 혹은 문구 구성란*/
+        .home {
+            width: 100%;
+            min-width: 450px;
+            font-size: 50px;
+            font-weight: 600;
+            position: absolute;
+            right: -274px;
+            top: 43px;
+        }
+        
+        /*네비게이션 카테고리 바*/
+        .categorie {
+            width: 100%;
+            max-width: 1000px;
+            height: 50px;
+            background-color: rgb(255, 208, 255);
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        
+        /*홈, 게시판, 게시글 작성 버튼*/
+        .categorie button {
+            border: none;
+            background-color: rgb(255, 208, 255);
+            width: 100px;
+            height: 30px;
+            margin-left: 30px;
+            font-size: 15px;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Jua', sans-serif;
+            cursor: pointer;
+        }
+
+        .home_button_img {
+            width: 30px;
+            position: relative;
+            margin-right: 5px;
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.1);
+            transition: 0.2s linear;
+            font-size: 20px;
+            color: white;
+        }
+        
+        
+        .main {
+            display: flex;
+        }
+
+        /*좌측 프로필 및 광고 게시란*/
+        .profile {
+            background-color: #aaa;
+            width: 200px;
+            height: 500px;
+            margin-top: 20px;
+        }
+        
+        .container {
+            width: 600px;
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+
+        /*메인 구성 이미지 -> 스토리지 및 버튼 클릭 이벤트 수정 가능한 구간*/
+        .img {
+            background-color: red;
+            width: 300px;
+            height: 300px;
+        }
+
+        /*메인 콘텐츠 텍스트*/
+        .content_text {
+            font-family: 'Jua', sans-serif;
+        }
+
+
+        /*페이지 이동 버튼 설정*/
+
+        #button1 

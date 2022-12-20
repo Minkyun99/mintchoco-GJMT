@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./mitchoco.css">
+    <link rel="stylesheet" href="board.css">
+        <style>
+          
+        
+
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+
+            /*헤더 및 네브, 콘텐츠 생성*/
+            const main_header = document.createElement('div')   //최상단 헤더를 감싸는 디브
+            const home = document.createElement('header')   //최상단 타이틀 헤더
+            const main_img = document.createElement('div')      //최상단 이미지 헤더
+            const categorie = document.createElement('nav')
+            const main = document.createElement('div')
+            const profile = document.createElement('div')
+            const container = document.getElementById('container')
+            const container_img = document.createElement('div')
+            const container_text = document.createElement('div')
+            
+            home.innerHTML = 'MINT CHOCO GJMT'
+            main_img.innerHTML = '<img src="./아냐 메인 홈페이지 크기조정.png">'
+            
+            
+            document.body.append(main_header)
+            main_header.appendChild(home)
+            main_header.appendChild(main_img)
+            document.body.append(categorie)
+
+
+            /*버튼 생성 반복문*/
+            for(i=1; i<=3; i++){
+                const button = document.createElement('button')
+                Object.assign(button,{
+                    id:`button${i}`
+                })
+                categorie.appendChild(button)
+            }
+    
+            /*카테고리 버튼 연동*/
+            button1.innerHTML = '홈'
+            button1.setAttribute('onclick', "location.href='mintchoco.html'")
+            button2.innerHTML = '게시글'
+            button2.setAttribute('onclick', "location.href='borad.html'")
+            button3.innerHTML = '글작성'
+            button3.setAttribute('onclick', "location.href='write.html'")
+            
+            document.body.append(main)
+            main.appendChild(profile)
+            main.appendChild(container)
+            container.appendChild(container_img)
+            container.appendChild(container_text)
+
+
+            /*id와 class 네임 부여*/
+            Object.assign(main_header,{
+                id:'main_header',
+                className:'main_header'
+            })
+
+            Object.assign(home,{
+                id:'home',
+                className:'home'
+            })
+
+            Object.assign(main_img,{
+                id:'main_img',
+                className:'main_img'
+            })
+
+            Object.assign(categorie,{
+                id:'categorie',
+                className:'categorie'
+            })
+           
+            Object.assign(main,{
+                id:'main',
+                className:'main'
+            })
+           
+            Object.assign(profile,{
+                id:'profile',
+                className:'profile'
+            })
+           
+            Object.assign(container,{
+                id:'container',
+                className:'container'
+            })
+
+        })
+    </script>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded",()=>{
+        const num = document.getElementById('na_num')
+        const til = document.getElementById('na_til')
+        const writer = document.getElementById('na_writer')
+        const view = document.getElementById('na_view')
+        const date = document.getElementById('na_data')
+        const nav = document.getElementById('table1')
+        const table = document.createElement('table')
+        const th = document.createElement('th')
+        const go_b=document.getElementById('gochim')
+        const write_submit = document.getElementById('glejakb')
+        const div = document.getElementById(`div${i}`)
+// 여기서부터 팝업창 관련된 js
+//    여기까지 팝업창
+
+let b=0
+
+
+
+nav.append(table)
+        let thtil=['글번호','제목','작성자','조회수','작성일자']
+        for(j=1;j<=1;j++){
+            const tr = document.createElement('tr')
+            table.appendChild(tr)
+            for(i=0;i<5;i++){
+                const th = document.createElement('th')
+                Object.assign(th,{
+                    id:`th${i}`
+                })
+                th.textContent=`${thtil[i]}`
+                tr.append(th)
+            }
+        }
+        
+        const bea4 = JSON.parse(localStorage.getItem('bea3'));
+        
+        let bea5
+        for(i=0; i<=bea4.length+1; i++){                
+            bea5 = [bea4[i].su,bea4[i].title, bea4[i].writer, bea4[i].view, bea4[i].dateStr, bea4[i].naeyong]
+            bea6 = [bea4[i].su,bea4[i].title, bea4[i].writer, bea4[i].view, bea4[i].dateStr]
+            
+            for(j=1;j<=1;j++){
+                /*팝업창 생성은 for문 안에서 한 뭉텅이로 생성이 되야 함.*/
+                /*팝업창 생성 선언*/
+                const popup_background =document.createElement('div')
+                popup_background.setAttribute('id','popup_background')
+                const popup_wrap=document.createElement('div')
+                popup_wrap.setAttribute('id','popup_wrap')
+                const popup_close=document.createElement('div')
+                popup_close.setAttribute('id','popup_close')
+                const popup_a=document.createElement('a')
+                const table1 = document.createElement('table')      /*팝업창 테이블 생성*/
+                const table_pop = document.createElement('table')
+
+                table_pop.setAttribute('id', 'table_pop')
+
+                // const colgroup = document.createElement('colgroup')
+                // const col = document.createElement('col')
+                // const col1 = document.createElement('col')
+
+                // Object(col,{
+                //     width : "200px",
+                //     height : "80px"
+                // })
+                
+                // col.width = '200px'
+                // col.height = '80px'
+                
+                // col1.width = '200px'
+                // col1.height = '80px'
+                
+                // table_pop.append(colgroup)
+                // colgroup.appendChild(col)
+                // colgroup.appendChild(col1)
+
+                // const popup_neayoung=document.createElement('div')
+                // popup_neayoung.setAttribute('id','popup_neayoung')
+                
+                document.body.append(popup_wrap)
+                popup_wrap.append(popup_close)
+                popup_close.append(popup_a)
+
+                /*팝업창 닫기 버튼 이벤트*/
+                popup_close.addEventListener('click', offClick);
+                     
+                /*팝업창 클릭 함수*/
+                function onClick() {
+                    popup_wrap.style.display ='block';
+                    popup_background.style.display ='block';
+                }   
+                function offClick() {
+                    popup_wrap.style.display ='none';
+                    popup_background.style.display ='none';
+                }
+                
+                /*tr생성*/
+                const tr = document.createElement('tr')
+                const td_content = ['글번호', '제목', '작성자','조회수', '날짜' ]
+                table.appendChild(tr)
+                
+                /*게시판 테이블 innerHTML 생성*/
+                for(z=0;z<=4;z++){
+                    const td = document.createElement('td')
+                    
+                    tr.append(td)
+                    Object.assign(td,{
+                        id : `td${z+1}`
+                    })
+                    
+                    td.innerHTML= `<div id='div${i}'> ${bea6[z]} </div>`
+                    
+                    td.addEventListener('click',()=>{
+                        onClick()
+                })
+                }
+
+                /*팝업창 innerHTML 생성*/
+                // for(a=0; a<=5; a++){
+                //     const popup_neayoung=document.createElement('div')   
+
+                //     Object.assign(popup_neayoung,{
+                //         id : `popup_naeyong${z+1}`
+                //     })   
+
+                //     const td_content1 = ['글번호', '제목', '작성자','조회수', '날짜', '내용' ]
+                //     popup_neayoung.innerHTML = `${td_content1[a]} : ${bea5[a]}`
+                //     popup_wrap.append(popup_neayoung)
+                // }
+                for(a=0; a<=5; a++){
+                    const td_content1 = ['글번호', '제목', '작성자','조회수', '날짜', '내용' ]
+                    const tr = document.createElement('tr')
+                    const td = document.createElement('td')
+                    const td1 = document.createElement('td')
+                    Object.assign(td,{
+                        id: `td_pop`
+                    })
+        
+                    Object.assign(td1,{
+                        id : `td1_pop`
+                    })
+        
+                    td.innerHTML = td_content1[a]
+                    td1.innerHTML = bea5[a]
+        
+                    popup_wrap.appendChild(table_pop)
+                    table_pop.appendChild(tr)
+                    tr.appendChild(td)
+                    tr.appendChild(td1)
+        
+                }
+            }
+        }
+
+    
+    })
+       
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const button_box = document.getElementById('button_box')
+            const button_board = document.getElementById('button2')
+            
+            button_board.addEventListener('click',()=>{
+                let count = 0
+                if(bea6.length%10==0){
+                    const next = document.createElement('button')
+                    button_box.appendChild(next)
+
+                    Object.assign(next,{
+                        id : 'next'
+                    })
+                    count++
+                next.innerHTML = `${count}`
+            }
+
+        })
+        })
+    </script>
+
+</head>
+<body>
+        <div id="container">
+
+            <h1>게시판</h1>
+            <input type="text" id='input_box' placeholder ="검색하세요">
+            <button id="search_b">검색</button>
+            <button id="gochim">새로고침</button>
+            <!-- nav는 게시글 목록 -->
+            <nav id="table1">
+            </nav>
+            <!-- 이전 다음 버튼 -->
+            <sub id="button_box">
+                <div>이전</div>
+                <div>다음</div>
+            </sub>
+            <!-- 글쓰기버튼 -->
+            <button onClick="location.href='asd.html'">글쓰기</button>
+        <!-- </div> -->
+    </div> 
+
+
+
+</body>
+</html>

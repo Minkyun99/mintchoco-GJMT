@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./mitchoco.css">
+    <link rel="stylesheet" href="./detail_content.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+
+        /*헤더 및 네브, 콘텐츠 생성*/
+        const main_header = document.createElement('div')   //최상단 헤더를 감싸는 디브
+        const home = document.createElement('header')   //최상단 타이틀 헤더
+        const main_img = document.createElement('div')      //최상단 이미지 헤더
+        const categorie = document.createElement('nav') //버튼 3개를 감싸는 카테고리 바
+        const main = document.createElement('div')  //profile과 container를 감싸는 메인 div
+        const profile = document.createElement('div')   
+        const container = document.createElement('div') 
+        const container_img = document.createElement('div') //container 내부 변경되는 사항
+        const container_text = document.createElement('div')
+
+        home.innerHTML = 'MINT CHOCO GJMT'
+        main_img.innerHTML = '<img src="./아냐 메인 홈페이지 크기조정.png">'
+
+
+        document.body.append(main_header)
+        main_header.appendChild(home)
+        main_header.appendChild(main_img)
+        document.body.append(categorie)
+
+
+        /*버튼 생성 반복문*/
+        for(i=1; i<=3; i++){
+            const button = document.createElement('button')
+            Object.assign(button,{
+                id:`button${i}`
+            })
+            categorie.appendChild(button)
+        }
+
+        /*카테고리 버튼 연동*/
+        button1.innerHTML = '홈'
+        button1.setAttribute('onclick', "location.href='mintchoco.html'")
+        button2.innerHTML = '게시글'
+        button2.setAttribute('onclick', "location.href='borad.html'")
+        button3.innerHTML = '글작성'
+        button3.setAttribute('onclick', "location.href='write.html'")
+
+        document.body.append(main)
+        main.appendChild(profile)
+        main.appendChild(container)
+        container.appendChild(container_img)
+        container.appendChild(container_text)
+
+
+        /*id와 class 네임 부여*/
+        Object.assign(main_header,{
+            id:'main_header',
+            className:'main_header'
+        })
+
+        Object.assign(home,{
+            id:'home',
+            className:'home'
+        })
+
+        Object.assign(main_img,{
+            id:'main_img',
+            className:'main_img'
+        })
+
+        Object.assign(categorie,{
+            id:'categorie',
+            className:'categorie'
+        })
+
+        Object.assign(main,{
+            id:'main',
+            className:'main'
+        })
+
+        Object.assign(profile,{
+            id:'profile',
+            className:'profile'
+        })
+
+        Object.assign(container,{
+            id:'container',
+            className:'container'
+        })
+
+        /*메인 콘텐츠 테이블 생성*/
+        const td_content = ['글번호', '제목', '작성자','조회수', '날짜', '내용' ]
+        const table = document.createElement('table')
+        const colgroup = document.createElement('colgroup')
+        container.appendChild(table)
+        table.appendChild(colgroup)
+        for(i=0; i<=1; i++){
+            const col = document.createElement('col')
+
+            Object(col,{
+                id: `col${i}`
+            })
+
+            col.width = '200px'
+            col.height = '50px'
+            colgroup.appendChild(col)
+        }
+
+        /*테이블 반복문*/
+        for(i=0; i<=6; i++){
+            const tr = document.createElement('tr')
+            const td = document.createElement('td')
+            const td1 = document.createElement('td')
+            Object.assign(td,{
+                id: `td${i+1}`
+            })
+
+            Object.assign(td1,{
+                id : `td1${i+1}`
+            })
+
+            td.innerHTML = td_content[i]
+            td1.innerHTML = td_content[i]
+
+            table.appendChild(tr)
+            tr.appendChild(td)
+            tr.appendChild(td1)
+        }
+
+
+
+        })
+    </script>
+
+    
+</head>
+<body>
+    <!-- <div class="main_header">
+        <header class="home" >MINT CHOCO GJMT</header>
+        <img src="./아냐 메인 홈페이지 크기조정.png" alt="" class="main_img">
+    </div>
+        <nav class="categorie">
+            <button class="bar_home">
+                <img src="./홈버튼.png" alt="" class="home_button_img">홈</button>
+            <button class="bar_board">게시판</button>
+            <button class="bar_write">글작성</button>
+        </nav>
+        <div class="main">
+            <div class="profile">프로필</div>
+
+
+            <div class="container">     
+               <div class="container2">
+
+
+                    <table class="table1">
+                        <colgroup>
+                            <col width="100px" height="30px">
+                            <col width="200px" height="30px"> 
+                        </colgroup>
+                        <tr>
+                            <td>글번호</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>글번호</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>글번호</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>글번호</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>글번호</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>글번호</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>글번호</td>
+                            <td>35</td>
+                        </tr>
+
+                    </table>
+
+                    <table class="img_table">
+                        <colgroup>
+                            <col width="100px" height="auto" align-items="top">
+                            <col width="100px" height="auto">
+                        </colgroup>
+                        <tr>
+                            <td>이미지</td>
+                            <td><img src="./홈버튼.png" alt=""></td>
+                        </tr>
+                    </table>
+                    <div class="button_box">
+                        <button>목록</button>
+                        <button>수정</button>
+                        <button>삭제</button>
+                        <button>이전글</button>
+                        <button>다음글</button>
+
+                    </div>
+
+               </div>
+            </div>
+        </div> -->
+
+
+
+</body>
+</html>

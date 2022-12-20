@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./mitchoco.css">
+    <link rel="stylesheet" href="write.css">
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+
+            /*헤더 및 네브, 콘텐츠 생성*/
+            const main_header = document.createElement('div')   //최상단 헤더를 감싸는 디브
+            const home = document.createElement('header')   //최상단 타이틀 헤더
+            const main_img = document.createElement('div')      //최상단 이미지 헤더
+            const categorie = document.createElement('nav')
+            const main = document.createElement('div')
+            const profile = document.createElement('div')
+            const container = document.getElementById('container')
+            const container_img = document.createElement('div')
+            const container_text = document.createElement('div')
+            
+            home.innerHTML = 'MINT CHOCO GJMT'
+            main_img.innerHTML = '<img src="./아냐 메인 홈페이지 크기조정.png">'
+            
+            
+            document.body.append(main_header)
+            main_header.appendChild(home)
+            main_header.appendChild(main_img)
+            document.body.append(categorie)
+
+
+            /*버튼 생성 반복문*/
+            for(i=1; i<=3; i++){
+                const button = document.createElement('button')
+                Object.assign(button,{
+                    id:`button${i}`
+                })
+                categorie.appendChild(button)
+            }
+    
+            /*카테고리 버튼 연동*/
+            button1.innerHTML = '홈'
+            button1.setAttribute('onclick', "location.href='mintchoco.html'")
+            button2.innerHTML = '게시글'
+            button2.setAttribute('onclick', "location.href='borad.html'")
+            button3.innerHTML = '글작성'
+            button3.setAttribute('onclick', "location.href='write.html'")
+            
+            document.body.append(main)
+            main.appendChild(profile)
+            main.appendChild(container)
+            container.appendChild(container_img)
+            container.appendChild(container_text)
+
+
+            /*id와 class 네임 부여*/
+            Object.assign(main_header,{
+                id:'main_header',
+                className:'main_header'
+            })
+
+            Object.assign(home,{
+                id:'home',
+                className:'home'
+            })
+
+            Object.assign(main_img,{
+                id:'main_img',
+                className:'main_img'
+            })
+
+            Object.assign(categorie,{
+                id:'categorie',
+                className:'categorie'
+            })
+           
+            Object.assign(main,{
+                id:'main',
+                className:'main'
+            })
+           
+            Object.assign(profile,{
+                id:'profile',
+                className:'profile'
+            })
+           
+            Object.assign(container,{
+                id:'container',
+                className:'container'
+            })
+
+        })
+    </script>
+</head>
+<body>
+
+        <div id="container"> 
+            <div class="write_title">   <!-- 글작성 -->
+                <h1>글작성</h1>
+            </div>  
+            <div>       <!-- 제목 -->
+                <span>제목</span>
+                <input id="write_a" type="text" placeholder="제목을 입력하세요.">
+            </div>
+            <div id="text_area">       <!-- 내용 -->
+                <span class="write_b">내용</span>
+                <textarea name=""  id="write_area"></textarea>
+            </div>
+            <div class="write_writer">   <!-- 작성자 -->
+                <span>작성자</span>
+                <input type="text" placeholder="닉네임을 입력하세요." id="write_c">
+            </div>
+            <div class="write_img">     <!-- 이미지 -->
+                <span>이미지</span>
+                <input type="file" class="write_file">
+            </div>
+            <button id="glejakb">글작성</button>
+        </div>
+    </div>
+
+<script>
+      // 글쓴이,제목,조회수를 배열로 만들어서 로컬 스토리지로 저장
+      document.addEventListener("DOMContentLoaded",()=>{
+        let title=document.getElementById('write_a')
+        let naeyong=document.getElementById('write_area')
+        let writer=document.getElementById('write_c')
+        let gleb=document.getElementById('glejakb')
+
+        
+        let view1=0
+        const date = new Date();
+
+        const year = date.getFullYear();
+        const month = ('0' + (date.getMonth() + 1)).slice(-2);
+        const day = ('0' + date.getDate()).slice(-2);
+        const dateStr = year + '-' + month + '-' + day;
+
+        const bea=[]    //초기 bea 배열 선언
+
+        const bea7 = JSON.parse(localStorage.getItem('bea3'));
+        // console.log(bea7)
+        if(bea7){
+            bea.push(...bea7)
+        }
+        
+        console.log(bea)
+
+
+        
+        let title_value
+        title.addEventListener('keyup',()=>{
+            title_value = title.value
+        })
+        
+        let writer_value
+        writer.addEventListener('keyup',()=>{
+            writer_value = writer.value
+        })
+        
+        let naeyong_value
+        naeyong.addEventListener('keyup',()=>{
+            naeyong_value = naeyong.value
+        })
+
+        
+        let count = 1
+        gleb.addEventListener('click',()=>{
+            const obj = {}
+            count = bea.length+1
+            let view=view1
+            
+            Object.assign(obj,{
+                su : count,
+                title : title_value,
+                writer: writer_value,
+                view : view,
+                dateStr: dateStr,
+                naeyong: naeyong_value
+                
+            })
+            
+            bea.push(obj)
+            console.log(bea)
+            const bea1=JSON.stringify(bea)
+            localStorage.setItem('bea3',bea1)
+            console.log(bea1)
+            location.href='borad.html'
+            
+            
+        })  
+        
+        
+    })
+</script>
+
+</body>
+</html>

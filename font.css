@@ -1,0 +1,13 @@
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Secular+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=La+Belle+Aurore&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Secular+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=La+Belle+Aurore&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Rubik+Gemstones&family=Secular+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Jua&family=La+Belle+Aurore&family=Nanum+Gothic&family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Rubik+Gemstones&family=Secular+One&display=swap');
+
+        body {font-family: 'Dongle', sans-serif;
+        font-family: 'Jua', sans-serif;
+        font-family: 'La Belle Aurore', cursive;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Poor Story', cursive;
+        font-family: 'Rubik Gemstones', cursive;
+        font-family: 'Secular One', sans-serif;}
