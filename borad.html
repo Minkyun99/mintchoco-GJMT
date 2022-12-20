@@ -114,12 +114,10 @@ document.addEventListener("DOMContentLoaded",()=>{
         const go_b=document.getElementById('gochim')
         const write_submit = document.getElementById('glejakb')
         const div = document.getElementById(`div${i}`)
-        // 여기서부터 팝업창 관련된 js
-        //    여기까지 팝업창
-        
-        let b=0
-       
-        const bea4 = JSON.parse(localStorage.getItem('bea3'));
+// 여기서부터 팝업창 관련된 js
+//    여기까지 팝업창
+
+let b=0
 
 
 
@@ -137,15 +135,12 @@ nav.append(table)
                 tr.append(th)
             }
         }
-       
-        let count=0
-        let bea = []
-        let arr = []
+        
+        const bea4 = JSON.parse(localStorage.getItem('bea3'));
+        
         let bea5
         for(i=0; i<=bea4.length+1; i++){                
             bea5 = [bea4[i].su,bea4[i].title, bea4[i].writer, bea4[i].view, bea4[i].dateStr, bea4[i].naeyong]
-            arr.push(...bea5)
-            localStorage.save = arr
             bea6 = [bea4[i].su,bea4[i].title, bea4[i].writer, bea4[i].view, bea4[i].dateStr]
             
             for(j=1;j<=1;j++){
@@ -218,28 +213,8 @@ nav.append(table)
                     
                     td.innerHTML= `<div id='div${i}'> ${bea6[z]} </div>`
                     
-                    td.addEventListener('click',(event)=>{
-                        
-
-                        let arr1 = localStorage.getItem('save')
-                        console.log(arr1)
-
-                        let click= event.currentTarget
-
-                        arr1.indexOf(key)
-                        
-
-                        // click.innerHTML=count++
-                        
-                        
-                        // let view_td=document.getElementById('td4')
-                        // Object.assign(view_td,{
-                        //     view : count
-                        // })
-                        
-                        
+                    td.addEventListener('click',()=>{
                         onClick()
-
                 })
                 }
 
@@ -279,8 +254,6 @@ nav.append(table)
                 }
             }
         }
-
-        
 
     
     })
