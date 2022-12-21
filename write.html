@@ -127,6 +127,7 @@
 <script>
     document.addEventListener("DOMContentLoaded",()=>{
         let title=document.getElementById('write_a')
+<<<<<<< HEAD
         let neayong=document.getElementById('write_b')
         let writer=document.getElementById('write_c')
         let gleb=document.getElementById('glejakb')
@@ -147,6 +148,69 @@
             
         })  
         })        
+=======
+        let naeyong=document.getElementById('write_area')
+        let writer=document.getElementById('write_c')
+        let gleb=document.getElementById('glejakb')
+
+        let bea = []
+
+        const bea7 = JSON.parse(localStorage.getItem('bea3'));
+        if(bea7){
+            bea.push(...bea7)
+        }
+        
+        
+        /*input 입력 내용 keyup 이벤트*/
+        let title_value
+        title.addEventListener('keyup',()=>{
+            title_value = title.value
+        })
+        
+        let writer_value
+        writer.addEventListener('keyup',()=>{
+            writer_value = writer.value
+        })
+        
+        let naeyong_value
+        naeyong.addEventListener('keyup',()=>{
+            naeyong_value = naeyong.value
+        })
+        
+        /*작성일자 계산식*/
+        const date = new Date();
+        
+        const year = date.getFullYear();
+        const month = ('0' + (date.getMonth() + 1)).slice(-2);
+        const day = ('0' + date.getDate()).slice(-2);
+        const dateStr = year + '-' + month + '-' + day;
+        
+        /*작성하기 버튼 눌렀을 때 이벤트 생성*/
+        let view1=0
+        let count = 1
+        gleb.addEventListener('click',()=>{
+            const obj = {}
+            count = bea.length+1
+            let view=view1
+            
+            Object.assign(obj,{
+                su : Number(count),
+                title : title_value,
+                writer: writer_value,
+                view : view,
+                dateStr: dateStr,
+                naeyong: naeyong_value
+            })
+            
+            bea.push(obj)
+            console.log(bea)
+            const bea1=JSON.stringify(bea)
+            localStorage.setItem('bea3',bea1)
+            console.log(bea1)
+            location.href='borad.html'
+        })
+
+>>>>>>> ca12d68 (노트북시작)
 
     })
 </script>

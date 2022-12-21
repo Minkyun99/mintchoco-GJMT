@@ -121,6 +121,7 @@
     </div>
 
 <script>
+<<<<<<< HEAD
     // 글쓴이,제목,조회수를 배열로 만들어서 로컬 스토리지로 저장
     document.addEventListener("DOMContentLoaded",()=>{
         let title=document.getElementById('write_a')
@@ -129,6 +130,17 @@
         let gleb=document.getElementById('glejakb')
 
         let su=0
+=======
+      // 글쓴이,제목,조회수를 배열로 만들어서 로컬 스토리지로 저장
+      document.addEventListener("DOMContentLoaded",()=>{
+        let title=document.getElementById('write_a')
+        let naeyong=document.getElementById('write_area')
+        let writer=document.getElementById('write_c')
+        let gleb=document.getElementById('glejakb')
+
+        
+        let view1=0
+>>>>>>> ca12d68 (노트북시작)
         const date = new Date();
 
         const year = date.getFullYear();
@@ -136,6 +148,7 @@
         const day = ('0' + date.getDate()).slice(-2);
         const dateStr = year + '-' + month + '-' + day;
 
+<<<<<<< HEAD
         
 
 
@@ -166,6 +179,63 @@
             console.log(bea)
         })  
 
+=======
+        const bea=[]    //초기 bea 배열 선언
+
+        const bea7 = JSON.parse(localStorage.getItem('bea3'));
+        // console.log(bea7)
+        if(bea7){
+            bea.push(...bea7)
+        }
+        
+        console.log(bea)
+
+
+        
+        let title_value
+        title.addEventListener('keyup',()=>{
+            title_value = title.value
+        })
+        
+        let writer_value
+        writer.addEventListener('keyup',()=>{
+            writer_value = writer.value
+        })
+        
+        let naeyong_value
+        naeyong.addEventListener('keyup',()=>{
+            naeyong_value = naeyong.value
+        })
+
+        
+        let count = 1
+        gleb.addEventListener('click',()=>{
+            const obj = {}
+            count = bea.length+1
+            let view=view1
+            
+            Object.assign(obj,{
+                su : count,
+                title : title_value,
+                writer: writer_value,
+                view : view,
+                dateStr: dateStr,
+                naeyong: naeyong_value
+                
+            })
+            
+            bea.push(obj)
+            console.log(bea)
+            const bea1=JSON.stringify(bea)
+            localStorage.setItem('bea3',bea1)
+            console.log(bea1)
+            location.href='borad.html'
+            
+            
+        })  
+        
+        
+>>>>>>> ca12d68 (노트북시작)
     })
 </script>
 
